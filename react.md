@@ -70,3 +70,9 @@ Btn.defaultProps = {
   text: "默认按钮"
 };
 ```
+
+######react 项目启动修改 port
+
+```json
+"start":"set PORT=3000 && react-scripts start"
+```

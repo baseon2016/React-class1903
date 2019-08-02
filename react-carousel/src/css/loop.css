@@ -1,0 +1,55 @@
+.loop {
+  width: 590px;
+  height: 470px;
+  margin: 100px auto;
+  overflow: hidden;
+  position: relative;
+}
+.loop-img {
+  width: calc(6 * 590px);
+  height: 470px;
+  display: flex;
+}
+.loop-img img {
+  display: block;
+  width: 590px;
+}
+.pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  list-style: none;
+  display: flex;
+}
+.pagination li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  user-select: none;
+}
+.pagination li.active {
+  background-color: red;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  line-height: 70px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+}
+.pre {
+  left: 0;
+}
+.next {
+  right: 0;
+}
