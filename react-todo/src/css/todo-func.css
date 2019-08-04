@@ -1,0 +1,34 @@
+.func {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.func .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.func .options span,
+.func .clear span {
+  cursor: pointer;
+}
+.func span {
+  font-size: 12px;
+}
+.func .options span {
+  padding: 5px;
+  border: 1px solid transparent;
+}
+.func .options span.selected {
+  border-color: hotpink;
+}
+.options span:hover {
+  border-color: pink;
+}
+.func .clear {
+  width: 120px;
+}
+.func .clear span:hover {
+  text-decoration: underline;
+}

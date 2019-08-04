@@ -1,0 +1,35 @@
+.todo li {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo li .del {
+  display: none;
+}
+.todo li:hover .del {
+  display: block;
+}
+.todo .select {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+}
+.todo .select.selected {
+  background-color: yellowgreen;
+}
+.todo .content.selected {
+  color: #aaa;
+  text-decoration: line-through;
+}
+.todo .content {
+  flex-grow: 1;
+}
+.todo .completeAll,
+.todo .select,
+.todo .del {
+  cursor: pointer;
+}
