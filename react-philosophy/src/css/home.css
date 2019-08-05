@@ -1,14 +1,59 @@
+.df {
+  display: flex;
+}
+.dn {
+  display: none;
+}
 .home {
   width: 500px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid orange;
+  font-size: 14px;
+  text-align: left;
 }
 .search {
-  padding: 10px;
+  padding: 20px;
   border: 1px solid blue;
+  margin-bottom: 10px;
 }
 .info {
-  padding: 10px;
+  padding: 20px;
   border: 1px solid greenyellow;
+}
+.info .tittle {
+  padding: 5px 0;
+}
+.info .tittle > span {
+  display: block;
+  width: 80px;
+  font-weight: bold;
+}
+.info-tittle {
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid teal;
+}
+.info-tittle span.category {
+  display: block;
+  width: 160px;
+  line-height: 2;
+  font-weight: bold;
+}
+.info-item {
+  margin-bottom: 2px;
+  border: 1px solid red;
+}
+.info-item span {
+  display: block;
+  width: 80px;
+  line-height: 1.5;
+}
+.info-item .name.nostock {
+  font-weight: bold;
+  color: red;
+}
+.search label {
+  user-select: none;
+  cursor: pointer;
 }

@@ -1,20 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import InfoTittle from "./InfoTittle";
-import InfoItem from "./InfoItem";
-class Info extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="info">
-        <div className="title">
-          <span>Name</span>
-          <span>Price</span>
-        </div>
-        <InfoTittle />
-        <InfoItem />
+const Info = props => {
+  const { showProducts } = props;
+  const sporting = showProducts.filter(
+    ele => ele.category === "Sporting Goods"
+  );
+  const electronics = showProducts.filter(
+    ele => ele.category === "Electronics"
+  );
+  return (
+    <div className="info">
+      <div className="tittle df">
+        <span>Name</span>
+        <span>Price</span>
       </div>
-    );
-  }
-}
+      <InfoTittle category={sporting} title="Sporting Goods" />
+      <InfoTittle category={electronics} title="Electronics" />
+    </div>
+  );
+};
 
 export default Info;
