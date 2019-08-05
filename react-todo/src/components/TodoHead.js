@@ -4,12 +4,21 @@ class TodoHead extends Component {
   state = {
     todoVal: ""
   };
+  add = event => {
+    if (event.key === "Enter") {
+      this.props.onChangeState(this.state.todoVal, this.clearVal);
+    }
+  };
+  clearVal = () => {
+    this.setState({
+      todoVal: ""
+    });
+  };
   handChange = event => {
     this.setState({
       todoVal: event.target.value
     });
   };
-  submit = () => {};
   render() {
     const { todoVal } = this.state;
     return (
@@ -18,7 +27,7 @@ class TodoHead extends Component {
           全选
         </span>
         <input
-          onKeyPress={event => this.props.onChangeState(event, todoVal)}
+          onKeyPress={this.add}
           onChange={this.handChange}
           type="text"
           value={todoVal}

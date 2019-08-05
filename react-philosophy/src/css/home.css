@@ -1,0 +1,14 @@
+.home {
+  width: 500px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid orange;
+}
+.search {
+  padding: 10px;
+  border: 1px solid blue;
+}
+.info {
+  padding: 10px;
+  border: 1px solid greenyellow;
+}

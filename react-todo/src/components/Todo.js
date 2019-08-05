@@ -3,39 +3,39 @@ import TodoHead from "./TodoHead";
 import TodoContent from "./TodoContent";
 import TodoFunc from "./TodoFunc";
 import "./../css/todo.css";
+import axios from "axios";
+import Ceshi from "./Ceshi";
 class Todo extends Component {
   state = {
-    todoList: [
-      {
-        complete: true,
-        content: "124",
-        id: 8
-      },
-      {
-        complete: false,
-        content: "235",
-        id: 9
-      }
-    ],
+    todoList: [],
     showItem: "all"
   };
+  componentDidMount() {
+    axios.get("http://localhost:5000/todolist").then(res => {
+      this.setState({ todoList: res.data });
+    });
+  }
   change = payload => {
     this.setState({
       showItem: payload
     });
   };
-  onChangeState = (event, payload) => {
-    if (event.key === "Enter") {
-      if (payload.trim() !== "") {
-        let newItem = {
-          complete: false,
-          content: payload,
-          id: Date.now()
-        };
-        this.setState({ todoList: [...this.state.todoList, newItem] });
-      } else {
-        alert("请输入有效内容");
-      }
+  onChangeState = (payload, clearVal) => {
+    const { todoList } = this.state;
+    if (payload.trim() !== "") {
+      let newItem = {
+        complete: false,
+        content: payload,
+        id: Date.now()
+      };
+      axios.post("http://localhost:5000/todolist", newItem).then(res => {
+        this.setState({
+          todoList: [...todoList, res.data]
+        });
+        clearVal();
+      });
+    } else {
+      alert("请输入有效内容");
     }
   };
   completeAllToggle = () => {
@@ -59,19 +59,30 @@ class Todo extends Component {
       });
     }
   };
+  // 修改对象数组中某一项，而数组的length没有变化，使用Map方法更简单
   toggleComplete = payload => {
-    const status = this.state.todoList.find(ele => ele.id === payload).complete;
-    const todos = ([...this.state.todoList].find(
-      ele => ele.id === payload
-    ).complete = !status);
-    this.setState({
-      todoList: todos
-    });
+    const { todoList } = this.state;
+    axios
+      .patch(`http://localhost:5000/todolist/${payload}`, {
+        complete: !todoList.find(ele => ele.id === payload).complete
+      })
+      .then(res => {
+        this.setState({
+          todoList: todoList.map(ele => {
+            if (ele.id === payload) {
+              return res.data;
+            }
+            return ele;
+          })
+        });
+      });
   };
   del = payload => {
-    const todos = this.state.todoList.filter(ele => ele.id !== payload);
-    this.setState({
-      todoList: todos
+    axios.delete(`http://localhost:5000/todolist/${payload}`).then(res => {
+      const todos = this.state.todoList.filter(ele => ele.id !== payload);
+      this.setState({
+        todoList: todos
+      });
     });
   };
   clearComplete = () => {
@@ -100,6 +111,7 @@ class Todo extends Component {
           change={this.change}
           clearComplete={this.clearComplete}
         />
+        <Ceshi />
       </div>
     );
   }

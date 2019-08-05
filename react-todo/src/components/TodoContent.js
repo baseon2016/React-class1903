@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import ItemList from "./ItemList";
 import "./../css/todo-content.css";
 class TodoContent extends Component {
-  state = {
-    todoListR: []
-  };
-  componentDidMount() {}
-  componentWillMount() {
-    const newTodo = [...this.props.todoList]
+  state = {};
+
+  render() {
+    // 对state属性参数的计算,直接写到render函数内,但是一定保证不能修改state
+    const todoListR = [...this.props.todoList]
       .reverse()
       .filter(element =>
         this.props.showItem === "all"
@@ -16,39 +14,25 @@ class TodoContent extends Component {
           ? element.complete === false
           : element.complete === true
       );
-    this.setState({
-      todoListR: [...newTodo]
-    });
-  }
-  // componentWillUpdate = () => {
-
-  // };
-  componentWillReceiveProps(newProps) {
-    if (newProps.todoList !== this.props.todoList) {
-      console.log(newProps);
-      const newTodo = [...newProps.todoList]
-        .reverse()
-        .filter(element =>
-          newProps.showItem === "all"
-            ? true
-            : newProps.showItem === "active"
-            ? element.complete === false
-            : element.complete === true
-        );
-      this.setState({
-        todoListR: [...newTodo]
-      });
-    }
-  }
-  render() {
-    const { todoListR } = this.state;
+    const showList = todoListR.map(item => (
+      <li key={item.id}>
+        <span
+          className={`select ${item.complete === true ? "selected" : ""}`}
+          onClick={() => this.props.toggleComplete(item.id)}
+        />
+        <span className={`content ${item.complete === true ? "selected" : ""}`}>
+          {item.content}
+        </span>
+        <span className="del" onClick={() => this.props.del(item.id)}>
+          X
+        </span>
+      </li>
+    ));
     return (
       <div>
-        <ItemList
-          todoListR={todoListR}
-          toggleComplete={this.props.toggleComplete}
-          del={this.props.del}
-        />
+        <ul style={{ display: todoListR.length ? "block" : "none" }}>
+          {showList}
+        </ul>
         <div style={{ display: !todoListR.length ? "block" : "none" }}>
           请添加待办事项
         </div>

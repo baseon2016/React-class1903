@@ -1,28 +1,19 @@
 import React, { Component } from "react";
 import "./../css/todo-func.css";
 class TodoFunc extends Component {
-  state = {
-    todoNum: null,
-    showClear: null
-  };
-  // componentWillUpdate = () => {
-  //   const newTodo = [...this.props.todoList].filter(
-  //     ele => ele.complete === false
-  //   );
-  //   const completeTodo = [...this.props.todoList].filter(
-  //     ele => ele.complete === true
-  //   );
-  //   this.setState({
-  //     todoNum: newTodo.length,
-  //     showClear: completeTodo.length ? true : false
-  //   });
-  // };
+  state = {};
+
   render() {
-    const { todoNum, showClear } = this.state;
+    const newTodo = [...this.props.todoList].filter(
+      ele => ele.complete === false
+    );
+    const completeTodo = [...this.props.todoList].filter(
+      ele => ele.complete === true
+    );
     return (
       <div className="func">
         <div>
-          <span>{todoNum} items left</span>
+          <span>{newTodo.length} items left</span>
         </div>
         <div className="options">
           <span
@@ -46,7 +37,7 @@ class TodoFunc extends Component {
         </div>
         <div className="clear">
           <span
-            style={{ display: showClear ? "block" : "none" }}
+            style={{ display: completeTodo.length ? "block" : "none" }}
             onClick={this.props.clearComplete}
           >
             Clear completed
