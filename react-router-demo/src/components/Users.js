@@ -10,27 +10,31 @@ class Users extends Component {
   // 2.location
   // 3.match  match 下的url给link to用  path给 Route path用
   render() {
+    const { match } = this.props;
     return (
       <div className="users">
         <ul>
           <li>
-            <NavLink activeStyle={{ color: "red" }} to="/users/zhangsan">
+            <NavLink
+              activeStyle={{ color: "red" }}
+              to={`${match.url}/zhangsan`}
+            >
               张三
             </NavLink>
           </li>
           <li>
-            <NavLink activeStyle={{ color: "red" }} to="/users/lisi">
+            <NavLink activeStyle={{ color: "red" }} to={`${match.url}/lisi`}>
               李四
             </NavLink>
           </li>
           <li>
-            <NavLink activeStyle={{ color: "red" }} to="/users/wangwu">
+            <NavLink activeStyle={{ color: "red" }} to={`${match.url}/wangwu`}>
               王五
             </NavLink>
           </li>
         </ul>
         {/* 设置动态路由 */}
-        <Route path="/users/:id" component={User} />
+        <Route path={`${match.path}/:id`} component={User} />
       </div>
     );
   }

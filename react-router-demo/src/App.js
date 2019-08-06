@@ -1,20 +1,28 @@
 import React from "react";
 import Routers from "./components/Routers";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./App.css";
 function App() {
   return (
     <Router className="App">
       <ul>
         <li>
-          <NavLink to="/" activeStyle={{ color: "red" }} className="nav-item">
+          <NavLink
+            to="/"
+            activeStyle={{ backgroundColor: "red" }}
+            className="nav-item"
+            activeClassName="active"
+          >
             Home
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/about"
-            activeStyle={{ color: "red" }}
+            activeStyle={{ backgroundColor: "red" }}
             className="nav-item"
+            activeClassName="active"
           >
             About
           </NavLink>
@@ -22,8 +30,9 @@ function App() {
         <li>
           <NavLink
             to="/users"
-            activeStyle={{ color: "red" }}
+            activeStyle={{ backgroundColor: "red" }}
             className="nav-item"
+            activeClassName="active"
           >
             Users
           </NavLink>
