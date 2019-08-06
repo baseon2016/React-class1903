@@ -2,20 +2,24 @@ import React from "react";
 import InfoTittle from "./InfoTittle";
 const Info = props => {
   const { showProducts } = props;
-  const sporting = showProducts.filter(
-    ele => ele.category === "Sporting Goods"
-  );
-  const electronics = showProducts.filter(
-    ele => ele.category === "Electronics"
-  );
+
+  const tittles = showProducts.map(ele => {
+    return (
+      <InfoTittle
+        category={ele.list}
+        key={ele.category}
+        tittle={ele.category}
+      />
+    );
+  });
+
   return (
     <div className="info">
       <div className="tittle df">
         <span>Name</span>
         <span>Price</span>
       </div>
-      <InfoTittle category={sporting} title="Sporting Goods" />
-      <InfoTittle category={electronics} title="Electronics" />
+      {tittles}
     </div>
   );
 };

@@ -1,40 +1,40 @@
 import React, { Component } from "react";
 class Search extends Component {
-  state = {
-    checker: false,
-    searcher: ""
-  };
-  checking = event => {
-    this.setState({
-      checker: event.target.checked
-    });
-  };
-  searching = event => {
-    this.setState({
-      searcher: event.target.value
-    });
-  };
+  // 转移到父组件内，换一种写法
+  // state = {
+  //   checker: false,
+  //   searcher: ""
+  // };
+  // checking = event => {
+  //   this.setState({
+  //     checker: event.target.checked
+  //   });
+  // };
+  // searching = event => {
+  //   this.setState({
+  //     searcher: event.target.value
+  //   });
+  // };
   search = event => {
     if (event.key === "Enter") {
-      this.props.search(event.target.value.trim());
+      this.props.search();
     }
   };
-  componentDidUpdate = (prevProps, prevState) => {
-    if (this.state.checker !== prevState.checker) {
-      this.props.hasStock(this.state.checker);
-      console.log(this.state.checker);
-    }
-  };
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (this.props.checker !== prevProps.checker) {
+  //     this.props.hasStock();
+  //   }
+  // };
 
   render() {
-    const { checker, searcher } = this.state;
+    const { checker, searcher, handleInput } = this.props;
     return (
       <div className="search">
         <input
           type="text"
           placeholder="Search..."
           value={searcher}
-          onChange={this.searching}
+          onChange={event => handleInput("searcher", event)}
           onKeyPress={this.search}
         />
         <div>
@@ -42,7 +42,7 @@ class Search extends Component {
             type="checkbox"
             id="term"
             value={checker}
-            onChange={this.checking}
+            onChange={event => handleInput("checker", event)}
           />
           <label htmlFor="term">Only show products in stock</label>
         </div>

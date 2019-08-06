@@ -6,7 +6,7 @@ const InfoTittle = props => {
   });
   return props.category.length ? (
     <div className="info-tittle">
-      <span className="category">{props.title}</span>
+      <span className="category">{props.tittle}</span>
       {items}
     </div>
   ) : (
