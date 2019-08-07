@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "./../css/header.scss";
 import styled from "styled-components";
 class Header extends Component {
@@ -7,7 +8,9 @@ class Header extends Component {
     return (
       <div className="vue-head">
         <div className="vue-head-inner container">
-          <img src="https://www.vue-js.com/public/images/vue.png" alt="" />
+          <NavLink to="/">
+            <img src="https://www.vue-js.com/public/images/vue.png" alt="" />
+          </NavLink>
           <Span>中文社区</Span>
         </div>
       </div>

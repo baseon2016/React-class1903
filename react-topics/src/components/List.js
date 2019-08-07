@@ -1,28 +1,22 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import "../css/list.scss";
 import axios from "axios";
 class List extends Component {
   state = {
-    type: "all"
+    type: "",
+    list: []
   };
   componentDidMount() {
-    const { type } = this.state;
+    // const { type } = this.state;
     const { search } = this.props.location;
-    if (search) {
-      axios
-        .get(`http://localhost:5000/topics/?tab=${search.replace("?tab=", "")}`)
-        .then(res => {
-          console.log(res.data);
-          this.setState({
-            type: search.replace("?tab=", "")
-          });
-        });
+    if (search && search !== "?tab=all") {
+      this.setState({
+        type: search.replace("?tab=", "")
+      });
     } else {
-      axios.get(`http://localhost:5000/topics/?tab=${type}`).then(res => {
-        console.log(res.data);
-        this.setState({
-          type: "all"
-        });
+      this.setState({
+        type: "all"
       });
     }
   }
@@ -34,13 +28,35 @@ class List extends Component {
     }
     if (prevState.type !== this.state.type) {
       const { type } = this.state;
-      axios
-        .get(`https://www.vue-js.com/api/v1/topics/?tab=${type}`)
-        .then(res => console.log(res.data.data));
+      if (type === "all") {
+        axios.get(`http://localhost:5000/topics/`).then(res => {
+          this.setState({
+            list: res.data
+          });
+        });
+      } else {
+        axios.get(`http://localhost:5000/topics?tab=${type}`).then(res => {
+          this.setState({
+            list: res.data
+          });
+        });
+      }
     }
   }
   render() {
     const { search } = this.props.location;
+    const { list } = this.state;
+    console.log(list);
+    const showList = list.map(ele => {
+      return (
+        <div className="list-item" key={ele.id}>
+          <NavLink to={`/topic/${ele.id}`}>
+            <span>{ele.tab}</span>
+            <span>{ele.title}</span>
+          </NavLink>
+        </div>
+      );
+    });
     return (
       <div>
         <ul
@@ -82,7 +98,7 @@ class List extends Component {
             </NavLink>
           </li>
         </ul>
-        <div>{this.state.type}类别列表</div>
+        <div>{showList}</div>
       </div>
     );
   }

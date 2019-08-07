@@ -1,0 +1,14 @@
+.list-item {
+  border-top: 1px solid #ccc;
+  background-color: #16c616;
+  a {
+    display: flex;
+    text-decoration: none;
+    span {
+      display: block;
+      width: 80px;
+      line-height: 30px;
+      font-size: 16px;
+    }
+  }
+}
