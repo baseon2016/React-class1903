@@ -71,6 +71,16 @@ Btn.defaultProps = {
 };
 ```
 
+###### react 路由
+
+- 安装 npm i react-router-dom
+- 路由中比较重要的组件 BrowserRouter Route Link NavLink
+  BrowserRouter 该组件是路由的包裹组件(凡是和路由相关的东西都必须有该组件包裹,它模拟的页面完全仿照浏览器历史记录)
+  Route 该组件代表一个页面,当页面的地址和该组件的 path 匹配时,就展示该组件对应的 component
+  Link NavLink 这两个组件就是用来做路由跳转的(组件的 to 属性)
+- 自定义组件如果被 Route 包裹了(写在了 Route 的 Component 属性下),那么该组件默认会接收一些相关路由的 props(history location match)
+-
+
 ######react 项目启动修改 port
 
 ```json
