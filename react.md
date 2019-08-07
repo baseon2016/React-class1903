@@ -79,7 +79,21 @@ Btn.defaultProps = {
   Route 该组件代表一个页面,当页面的地址和该组件的 path 匹配时,就展示该组件对应的 component
   Link NavLink 这两个组件就是用来做路由跳转的(组件的 to 属性)
 - 自定义组件如果被 Route 包裹了(写在了 Route 的 Component 属性下),那么该组件默认会接收一些相关路由的 props(history location match)
--
+
+###### react 组件的样式处理
+
+一般来说我们直接创建对应的 css 文件,在导入到组件内,也可以在组件内的 html 标签写行内样式,导入的文件样式是全局的
+
+1. 如何在 react 项目内使用 sass
+
+- 安装 `npm i node-sass`
+- react 新环境默认支持 sass 语法,不需要我们手动修改配置文件(熟悉 webpack 的话会很简单)
+- 在组件内直接引入 scss 文件即可
+
+2. 如何让组件的样式私有化
+
+- 直接把样式写在行内
+- 使用 styled-components 包解决
 
 ######react 项目启动修改 port
 
