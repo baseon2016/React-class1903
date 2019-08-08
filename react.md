@@ -95,6 +95,124 @@ Btn.defaultProps = {
 - 直接把样式写在行内
 - 使用 styled-components 包解决
 
+###### react 使用插件 ui 蚂蚁
+
+- 整体引入方式
+
+1. 现在从 yarn 或 npm 安装并引入 antd。
+
+```
+$ yarn add antd
+npm i antd
+```
+
+2. 修改 src/App.js，引入 antd 的按钮组件。
+
+```js
+import React, { Component } from "react";
+import Button from "antd/es/button";
+import "./App.css";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Button type="primary">Button</Button>
+      </div>
+    );
+  }
+}
+export default App;
+```
+
+3. 修改 src/App.css，在文件顶部引入 antd/dist/antd.css。
+
+```js
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+...
+```
+
+- 部分引入，按需引入
+
+1. 引入<font color='red'> react-app-rewired </font>并修改 package.json 里的启动配置。由于新的 react-app-rewired@2.x 版本的关系，你还需要安装 <font color='red'>customize-cra</font>。
+
+```js
+$ yarn add react-app-rewired customize-cra
+
+/* package.json */
+"scripts": {
+-   "start": "react-scripts start",
++   "start": "react-app-rewired start",
+-   "build": "react-scripts build",
++   "build": "react-app-rewired build",
+-   "test": "react-scripts test",
++   "test": "react-app-rewired test",
+}
+```
+
+2. 然后在项目根目录创建一个 config-overrides.js 用于修改默认配置。
+
+```js
+module.exports = function override(config, env) {
+  // do stuff with the webpack config...
+  return config;
+};
+```
+
+3. 使用 babel-plugin-import#
+
+注意：antd 默认支持基于 ES module 的 tree shaking，js 代码部分不使用这个插件也会有按需加载的效果。
+
+<table><tr><td bgcolor='powderblue'>
+babel-plugin-import 是一个用于按需加载组件代码和样式的 babel 插件（原理），现在我们尝试安装它并修改 config-overrides.js 文件。
+</td></tr></table>
+
+```js
+$ yarn add babel-plugin-import
++ const { override, fixBabelImports } = require('customize-cra');
+
+- module.exports = function override(config, env) {
+- // do stuff with the webpack config...
+- return config;
+- };
+
+* module.exports = override(
+* fixBabelImports('import', {
+*     libraryName: 'antd',
+*     libraryDirectory: 'es',
+*     style: 'css',
+* }),
+* );
+
+```
+
+<font color='red'>然后移除前面在 src/App.css 里全量添加的 @import '~antd/dist/antd.css'; 样式代码，并且按下面的格式引入模块。</font>
+
+```js
+  // src/App.js
+  import React, { Component } from 'react';
+- import Button from 'antd/es/button';
++ import { Button } from 'antd';
+  import './App.css';
+
+  class App extends Component {
+    render() {
+      return (
+        <div className="App">
+          <Button type="primary">Button</Button>
+        </div>
+      );
+    }
+  }
+
+  export default App;
+```
+
 ######react 项目启动修改 port
 
 ```json

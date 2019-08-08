@@ -20,7 +20,8 @@ class Topic extends Component {
         {article ? (
           <div>
             <h3>{article.title}</h3>
-            <div>{article.content}</div>
+            {/* 在react中解析渲染字符串中的html标签 */}
+            <div dangerouslySetInnerHTML={{ __html: article.content }} />
           </div>
         ) : (
           <div>稍等一下，马上加载</div>
