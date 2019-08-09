@@ -1,0 +1,20 @@
+.e-container {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0px auto 30px;
+  overflow: hidden;
+  clear: both;
+}
+.main-content {
+  width: 100%;
+  padding-right: 330px;
+  box-sizing: border-box;
+}
+.fixed-content {
+  width: 300px;
+  margin: 0px auto;
+  margin-left: -330px;
+}
+.mt30 {
+  margin-top: 30px;
+}

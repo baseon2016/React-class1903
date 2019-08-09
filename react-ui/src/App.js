@@ -1,4 +1,6 @@
 import React from "react";
+import Recharts from "./components/Recharts";
+import Echarts from "./components/Echarts";
 import {
   LineChart,
   Line,
@@ -75,6 +77,8 @@ const App = () => {
     <div>
       <div>{renderLineChart}</div>
       <div>{pieChart}</div>
+      <Recharts />
+      <Echarts />
     </div>
   );
 };
