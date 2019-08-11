@@ -5,7 +5,6 @@ import "./header.css";
 class Header extends Component {
   render() {
     const { pathname } = this.props.location;
-    console.log(this.props);
     return (
       <div className="header">
         <div>
@@ -19,7 +18,6 @@ class Header extends Component {
             <li>
               <NavLink
                 to="/index"
-                exact
                 activeClassName="active"
                 className={pathname === "/" ? "active" : ""}
               >

@@ -1,0 +1,39 @@
+.block {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e2e2;
+}
+.block .block-inner {
+  width: 94%;
+  margin: 22px auto;
+  overflow: hidden;
+}
+.block .block-inner .blog {
+  width: 95%;
+  margin-left: 2%;
+}
+.block .block-inner .blog p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.block .block-inner .blog p a {
+  cursor: pointer;
+  color: #2e3135;
+  font-weight: bold;
+}
+.blogs .block .info-opt span.collect {
+  display: block;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin: 14px auto;
+  background-image: url(https://www.wanandroid.com/resources/image/pc/collect_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 16px;
+}
+.blogs .block .info-opt span.collect:hover {
+  background-image: url(https://www.wanandroid.com/resources/image/pc/collect_icon_hover.svg);
+}

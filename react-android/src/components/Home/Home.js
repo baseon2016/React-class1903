@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MySwiper from "../MySwiper/MySwiper";
+import HomeArticles from "./HomeArticles";
 import "./home.css";
 class Home extends Component {
   state = {};
@@ -34,6 +35,9 @@ class Home extends Component {
           <div className="swiper-v">
             <MySwiper {...swiper2} />
           </div>
+        </div>
+        <div className="home-articles">
+          <HomeArticles />
         </div>
       </div>
     );

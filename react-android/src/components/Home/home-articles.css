@@ -1,0 +1,30 @@
+.articles-wrap {
+  background-color: #fff;
+}
+.articles-wrap .articles-title {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid #8db5d0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+  text-indent: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.articles-wrap .articles-title a {
+  color: #333;
+  font-weight: normal;
+  text-decoration: none;
+}
+.articles-wrap .articles-title a.active {
+  color: #276692;
+}
+
+.articles-wrap .articles-title .splite {
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 10px;
+  color: #e2e2e2;
+}

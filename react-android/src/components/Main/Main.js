@@ -13,6 +13,7 @@ class Main extends Component {
           <div className="main-content">
             <Route path="/" component={Home} exact />
             <Route path="/index" component={Home} />
+            <Route path="/pindex" component={Home} />
             <Route path="/projectindex" component={ProjectIndex} />
             <Route path="/tree" component={Tree} />
           </div>
