@@ -1,26 +1,46 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import InfiniteLoader from "react-infinite-loader";
 import "./blog.css";
 class Blogs extends Component {
   state = {
     blogs: [],
-    pageNum: 0
+    pageNum: 0,
+    showLoading: false
   };
   componentDidMount() {
-    const type = this.props.match.params.type || "index";
+    const { type } = this.props.match.params;
 
     axios
       .get(`/api/article/${type === "index" ? "list" : "listproject"}/0/json`)
       .then(res => {
+        console.log(res.data.data.datas);
         this.setState({
           blogs: res.data.data.datas
         });
       });
+    window.onscroll = () => {
+      // console.log(document.querySelector("body").clientHeight);
+      // console.log(window.scrollY);
+      // console.log(window.innerHeight);
+      const { pageNum, showLoading } = this.state;
+      if (showLoading === false) {
+        if (
+          document.querySelector("body").clientHeight -
+            window.scrollY -
+            window.innerHeight <
+          10
+        ) {
+          this.setState({
+            pageNum: pageNum + 1,
+            showLoading: true
+          });
+        }
+      }
+    };
   }
   componentDidUpdate(prevProps, prevState) {
-    const type = this.props.match.params.type || "index";
+    const { type } = this.props.match.params;
     const { blogs, pageNum } = this.state;
     if (prevState.pageNum !== this.state.pageNum) {
       axios
@@ -31,19 +51,14 @@ class Blogs extends Component {
         )
         .then(res => {
           this.setState({
-            blogs: [...blogs, ...res.data.data.datas]
+            blogs: [...blogs, ...res.data.data.datas],
+            showLoading: false
           });
         });
     }
   }
-  handleVisit = () => {
-    const { pageNum } = this.state;
-    this.setState({
-      pageNum: pageNum + 1
-    });
-  };
   render() {
-    const { blogs } = this.state;
+    const { blogs, showLoading } = this.state;
     const showBlogs = blogs.length ? (
       blogs.map(ele => {
         return (
@@ -78,17 +93,9 @@ class Blogs extends Component {
     return (
       <div className="blogs ">
         {showBlogs}
-        <InfiniteLoader
-          loaderStyle={{
-            width: "50px",
-            height: "50px",
-            borderColor:
-              "rgba(0, 127, 255, 0.2) rgba(0, 127, 255, 0.2) rgba(0, 127, 255, 0.2) rgb(255, 255, 255)",
-            margin: "20px 20px"
-          }}
-          visitStyle={{ backgroundColor: "#fff", marginBottom: "20px" }}
-          onVisited={this.handleVisit}
-        />
+        <div style={{ display: showLoading ? "block" : "none" }}>
+          请稍等......
+        </div>
       </div>
     );
   }

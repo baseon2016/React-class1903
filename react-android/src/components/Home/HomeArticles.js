@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, NavLink, withRouter } from "react-router-dom";
 import Blogs from "./Blogs";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import "./home-articles.css";
 class HomeArticles extends Component {
   state = {};
@@ -25,8 +25,8 @@ class HomeArticles extends Component {
         </div>
         <div>
           <Route path="/" component={Blogs} exact />
-          <Route path="/index" component={Blogs} />
-          <Route path="/pindex" component={Projects} />
+          <Route path="/:type" component={Blogs} />
+          {/* <Route path="/pindex" component={Projects} /> */}
         </div>
       </div>
     );

@@ -23,6 +23,27 @@
   color: #2e3135;
   font-weight: bold;
 }
+.block .block-inner .blog p a:hover {
+  text-decoration: underline;
+  color: "#007fff";
+}
+.blog .info-art span {
+  color: #999;
+  font-size: 12px;
+  margin-right: 6px;
+}
+.blog .info-art span a {
+  color: #484848;
+  cursor: pointer;
+}
+.blog .info-art span.istop {
+  color: #e24234;
+  border: 1px solid #e24234;
+}
+.blog .info-art span.fresh {
+  color: red;
+  border: 1px solid red;
+}
 .blogs .block .info-opt span.collect {
   display: block;
   height: 20px;
