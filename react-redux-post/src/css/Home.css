@@ -1,0 +1,8 @@
+.home .articles a {
+  display: block;
+  color: #000;
+}
+.home .articles a:hover {
+  color: teal;
+  text-decoration: underline;
+}

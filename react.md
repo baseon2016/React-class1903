@@ -213,6 +213,52 @@ $ yarn add babel-plugin-import
   export default App;
 ```
 
+######react redux
+
+1. 安装
+
+- npm i redux
+
+2. 创建
+
+- 创建 src/store.js
+- 在 store.js 内
+
+```js
+import { createStore } from "redux";
+
+const initialState = {
+  count: 10
+};
+
+const rootReducer = (state = initialState, action) => {
+  return state;
+};
+const store = createStore(rootReducer);
+export default store;
+```
+
+3. 静态获取
+
+- 在组件内导入 store 使用 `store.getState()`
+
+4. 修改 state
+
+- 在 store.js 内的 reducer 函数内
+
+```js
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "ADD":
+      state.count++;
+      break;
+    default:
+      break;
+  }
+  return state;
+};
+```
+
 ######react 项目启动修改 port
 
 ```json
