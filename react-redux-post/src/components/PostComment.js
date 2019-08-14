@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class PostComment extends Component {
   state = {};
   render() {
-    return <div>PostComment</div>;
+    return <div>{this.props.comment.text}</div>;
   }
 }
 

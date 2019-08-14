@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import store from "../store";
 import axios from "axios";
 import "../css/Home.css";
 class Home extends Component {
   componentDidMount() {
-    axios.get();
+    axios.get("http://localhost:5000/posts").then(res => {
+      store.dispatch({ type: "GETPOSTS", payload: res.data });
+    });
+    axios.get("http://localhost:5000/comments").then(res => {
+      store.dispatch({ type: "GETCOMMENTS", payload: res.data });
+    });
   }
   render() {
     const { posts } = this.props;
