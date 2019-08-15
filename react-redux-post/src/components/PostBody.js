@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 class PostBody extends Component {
-  state = {};
   render() {
-    return <div>{this.props.post.content}</div>;
+    const { post } = this.props;
+    return (
+      <div>
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </div>
+    );
   }
 }
 

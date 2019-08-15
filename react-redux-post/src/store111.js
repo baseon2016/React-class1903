@@ -2,18 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import { logger } from "redux-logger";
 const initialState = {
   posts: [],
-  comments: [
-    // {
-    //   id: "hkjsldhf",
-    //   postId: "31223",
-    //   text: "评论1"
-    // },
-    // {
-    //   id: "4ty6fj4hft64j",
-    //   postId: "31223432",
-    //   text: "评论2"
-    // }
-  ]
+  comments: []
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -27,7 +16,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         comments: action.payload
       };
-
+    case "ADDCOMMENT":
+      return {
+        ...state,
+        comments: [...state.comments, action.payload]
+      };
+    case "DELCOMMENT":
+      return {
+        ...state,
+        comments: action.payload
+      };
     default:
       return state;
   }

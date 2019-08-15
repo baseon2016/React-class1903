@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import store from "../store";
-import axios from "axios";
 import "../css/Home.css";
+import { getPosts } from "../store/actions";
 class Home extends Component {
   componentDidMount() {
-    axios.get("http://localhost:5000/posts").then(res => {
-      store.dispatch({ type: "GETPOSTS", payload: res.data });
-    });
-    axios.get("http://localhost:5000/comments").then(res => {
-      store.dispatch({ type: "GETCOMMENTS", payload: res.data });
-    });
+    this.props.getPosts();
   }
   render() {
     const { posts } = this.props;
     const showPosts = posts.length ? (
       <ul className="articles">
-        {posts.map(ele => {
+        {[...posts].reverse().map(ele => {
           return (
             <Link to={`/post/${ele.id}`} key={ele.id}>
               {ele.title}
@@ -34,4 +28,10 @@ class Home extends Component {
 const mapStateToProps = state => {
   return { posts: state.posts };
 };
-export default connect(mapStateToProps)(Home);
+//可以利用mapDispatchToProps将action 创建函数附带上 dispatch功能,这样就直接执行 action 创建函数默认触发dispatch
+// 下面的写法是mapDispatchToProps的语法糖
+// 这样会把该action创建函数重新整理（带了dispatch 会自动触发action）并且放在组件的props内
+export default connect(
+  mapStateToProps,
+  { getPosts }
+)(Home);
