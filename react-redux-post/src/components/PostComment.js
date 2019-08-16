@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { addComment, delComment } from "../store/actions";
 import { connect } from "react-redux";
 class PostComment extends Component {
@@ -14,10 +13,13 @@ class PostComment extends Component {
   doComment = event => {
     // event.preventDefault();
     if (event.key === "Enter" && event.target.value.trim()) {
-      this.props.addComment({ val: this.state.val, postId: this.props.postId });
-      this.setState({
-        val: ""
-      });
+      this.props.addComment(
+        { val: this.state.val, postId: this.props.postId },
+        () =>
+          this.setState({
+            val: ""
+          })
+      );
     }
   };
   delComment = id => {
@@ -27,7 +29,7 @@ class PostComment extends Component {
     const { comments } = this.props;
     const commentList = comments.length ? (
       <ul>
-        {[...comments].reverse().map(ele => {
+        {comments.map(ele => {
           return (
             <li key={ele.id}>
               <span>{ele.text}</span>

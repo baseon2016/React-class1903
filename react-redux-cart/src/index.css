@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+.df {
+  display: flex;
+}
+.cart-item {
+  justify-content: space-around;
+}

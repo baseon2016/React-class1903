@@ -27,7 +27,7 @@ const getComments = id => {
     });
   };
 };
-const addComment = payload => {
+const addComment = (payload,callBack) => {
   return dispatch => {
     const url = "http://localhost:5000/comments";
     axios
@@ -37,6 +37,7 @@ const addComment = payload => {
       })
       .then(res => {
         dispatch({ type: ADD_COMMENT, payload: res.data });
+        callBack()
       });
   };
 };

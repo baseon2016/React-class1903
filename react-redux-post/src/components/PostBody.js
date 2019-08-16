@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {} from "react-redux";
+
 class PostBody extends Component {
   render() {
     const { post } = this.props;
