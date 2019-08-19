@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Cart from "./Cart";
+import { qtyAdd, qtyMinus } from "../store/actions";
 const CartContainer = props => {
   return <Cart {...props} />;
 };
@@ -10,4 +11,7 @@ const mapStateToProps = state => {
     products: state.products
   };
 };
-export default connect(mapStateToProps)(CartContainer);
+export default connect(
+  mapStateToProps,
+  { qtyAdd, qtyMinus }
+)(CartContainer);

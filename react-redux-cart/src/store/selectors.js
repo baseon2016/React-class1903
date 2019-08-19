@@ -1,10 +1,16 @@
-export const showCart = (productIdInCart, quantityById, products) => {
-  return productIdInCart.map(ele => {
+const showCart = (cart, products) => {
+  return cart.productIdInCart.map(ele => {
     const product = products.find(item => item.id === ele);
-    console.log(product);
     return {
       ...product,
-      qty: quantityById[ele]
+      qty: cart.quantityById[ele]
     };
   });
 };
+const totalCost = (cart, products) => {
+  return showCart(cart, products).reduce(
+    (res, ele) => res + ele.price * ele.qty,
+    0
+  );
+};
+export { showCart, totalCost };

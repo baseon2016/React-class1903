@@ -259,6 +259,27 @@ const rootReducer = (state = initialState, action) => {
 };
 ```
 
+###### react 部署
+
+- 使用了路由
+
+  - 路由模式是 HashRouter
+    - 需要在 package.json 内添加一项 homepage 属性 属性值是自己服务器地址 例如:`https://baseon2016.github.io/react-bushu`
+    - 直接执行 npm run build 生成 build 文件夹
+    - 将 build 文件夹上传到服务器即可(免费用 git,或者公司服务器)
+  - 路由模式是 BrowserRouter
+    由于 BrowserRouter 模式完全仿照浏览器的历史记录模式,所以如果部署到服务器下的子目录,需要将路由所有相关的地址加上子目录前缀,然后再像 Hash 模式一样生成 build 并上传服务器
+
+- 没有使用路由
+
+  - 直接执行 npm run build 生成 build 文件夹
+  - 将 build 文件夹上传到服务器即可(免费用 git,或者公司服务器)
+
+插件<!-- gh-pages -d -build -->使用方法,简化上传步骤:
+1. 项目内安装插件 `npm i gh-pages -D`
+2. 在package.json文件内 script 属性 添加一项 `"deploy":"gh-pages -d build"`
+3. 直接在master执行 `npm run deploy`,会直接将master分支下的build文件夹内所有内容直接上传到 gh-pages分支
+
 ######react 项目启动修改 port
 
 ```json

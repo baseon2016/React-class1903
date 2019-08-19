@@ -1,5 +1,5 @@
 //actions创建函数
-import { GET_PRODUCTS, ADD_CART } from "./actionTypes";
+import { GET_PRODUCTS, ADD_CART, QTY_ADD, QTY_MINUS } from "./actionTypes";
 import axios from "axios";
 const getProducts = () => dispatch => {
   const url = "http://localhost:5000/products";
@@ -13,4 +13,16 @@ const addCart = id => {
     payload: id
   };
 };
-export { getProducts, addCart };
+const qtyAdd = id => {
+  return {
+    type: QTY_ADD,
+    payload: id
+  };
+};
+const qtyMinus = id => {
+  return {
+    type: QTY_MINUS,
+    payload: id
+  };
+};
+export { getProducts, addCart, qtyAdd, qtyMinus };

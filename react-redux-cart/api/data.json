@@ -1,8 +1,8 @@
 {
   "products": [
-    { "id": "1", "name": "HuaWei", "price": 100000, "inventory": 100 },
-    { "id": "2", "name": "Verasce", "price": 9999, "inventory": 100 },
-    { "id": "3", "name": "Gucci", "price": 123, "inventory": 23 },
-    { "id": "4", "name": "Bugatti", "price": 99999999, "inventory": 1 }
+    { "id": "1", "name": "HuaWei", "price": 100, "inventory": 10 },
+    { "id": "2", "name": "Verasce", "price": 99, "inventory": 5 },
+    { "id": "3", "name": "Gucci", "price": 12, "inventory": 2 },
+    { "id": "4", "name": "Bugatti", "price": 999, "inventory": 1 }
   ]
 }
