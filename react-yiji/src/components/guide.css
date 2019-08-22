@@ -1,0 +1,17 @@
+.guide {
+  width: 7.5rem;
+  height: 100vh;
+}
+.guide .push {
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+}
+.push h3 {
+  font-size: 0.32rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
+}

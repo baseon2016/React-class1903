@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-size: 0.32rem;
+  font-family: "Microsoft YaHei";
+}
+/* .dn {
+  display: none;
+} */
+.po-r {
+  position: relative;
+}
+.po-a {
+  position: absolute;
+}
