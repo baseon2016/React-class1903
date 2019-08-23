@@ -10,7 +10,8 @@ class MySwiper extends Component {
       swiperId,
       slidesPerView,
       navigation,
-      pagination
+      pagination,
+      allowSlidePrev
     } = this.props;
     new Swiper(`#${swiperId}`, {
       direction, // 垂直切换选项
@@ -28,18 +29,31 @@ class MySwiper extends Component {
         ? {
             el: `.${pagination.el}`
           }
-        : {}
+        : {},
+      allowSlidePrev: allowSlidePrev === undefined ? true : allowSlidePrev
+      // on: {
+      //   slideChange: function() {
+      //     changeIndex(this.activeIndex);
+      //   }
+      // }
     });
   }
   render() {
-    const { pics, swiperId, navigation, pagination } = this.props;
+    const { contents, swiperId, navigation, pagination } = this.props;
     return (
       <div className="swiper">
         <div className="swiper-container" id={`${swiperId}`}>
           <div className="swiper-wrapper">
-            {pics.map((ele, index) => (
-              <div key={ele + index} className="swiper-slide">
-                <img src={ele} alt="" />
+            {contents.map(ele => (
+              <div
+                key={ele.id}
+                className="swiper-slide"
+                style={{
+                  backgroundImage: "url(" + ele.url + ")",
+                  backgroundSize: "cover"
+                }}
+              >
+                {ele.component ? ele.component : ""}
               </div>
             ))}
           </div>

@@ -1,0 +1,56 @@
+.login {
+  width: 7.5rem;
+  height: 100vh;
+  background-image: url("https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/lead6.jpg");
+  background-size: cover;
+}
+.login-inner {
+  width: 6rem;
+  margin: 0 auto;
+}
+.login-form {
+  padding-top: 4.5rem;
+}
+.login-form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #acacac;
+  font-size: 0.32rem;
+  line-height: 0.72rem;
+  text-align: center;
+}
+.login-form > div {
+  padding: 0.2rem 0;
+}
+
+.login-btn {
+  justify-content: space-around;
+  font-size: 0.36rem;
+  line-height: 0.72rem;
+}
+.login-btn a {
+  color: #3c3c3c;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+}
+.agree-info {
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  text-align: center;
+}
+.agree-info img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+.agree-info p {
+  font-size: 0.24rem;
+}
+.agree-info p > span {
+  color: #fff;
+}

@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Guide from "./components/Guide";
+
+import Main from "./components/Main";
+
 function App() {
   return (
     <Router className="App">
-      <Guide />
+      <Main />
     </Router>
   );
 }

@@ -1,8 +1,4 @@
-.guide {
-  width: 7.5rem;
-  height: 100vh;
-}
-.guide .push {
+.push {
   left: 50%;
   top: 70%;
   transform: translateX(-50%);
