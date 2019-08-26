@@ -11,7 +11,8 @@ class Home extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/home/articles" exact component={Articles} />
+          <Route path="/home" exact component={Articles} />
+          <Route path="/home/articles" component={Articles} />
           <Route path="/home/recommend" component={Recommend} />
           <Route path="/home/post" component={Post} />
           <Route path="/home/user" component={User} />

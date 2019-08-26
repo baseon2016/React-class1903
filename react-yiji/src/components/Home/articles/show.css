@@ -4,6 +4,10 @@
 }
 .show-tabs {
   width: 15rem;
+  transition: all 1s;
+}
+.show-tabs.toshow {
+  transform: translateX(-7.5rem);
 }
 .show-tab {
   width: 7.5rem;
@@ -26,4 +30,59 @@
 }
 .tab-title span.toshow {
   color: #fff;
+  background: linear-gradient(to left, #cd8c88, #d32117);
+  border-top-left-radius: 0.3020833333333333rem;
+  border-bottom-left-radius: 0.3020833333333333rem;
+}
+.show-content {
+  padding-bottom: 1.5rem;
+}
+.show-list li {
+  margin-bottom: 0.14rem;
+}
+.show-list li > img {
+  display: block;
+  width: 7.5rem;
+}
+.show-item .item-func {
+  width: 7.5rem;
+  height: 0.6rem;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 0;
+  z-index: 1;
+}
+.show-item .item-func div {
+  margin-left: 0.4rem;
+  margin-right: 0.2rem;
+}
+.show-item .item-func span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-left: 3px;
+}
+.show-item .item-func .iconfont {
+  font-size: 14px;
+  margin-right: 1px;
+}
+.show-item .item-day {
+  right: 0;
+  top: 15px;
+  z-index: 1;
+}
+.show-item .item-day span {
+  display: block;
+  width: 1.4rem;
+  font-size: 10px;
+  line-height: 0.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  padding-left: 0.24rem;
+}
+.show-item .item-day span.over {
+  background-color: #242424;
+}
+.show-item .item-day span.day-info {
+  background-color: #c93b2f;
 }

@@ -1,4 +1,9 @@
-import { CHANGE_INDEX, TOGGLE_AGREE, CHANGE_TAB } from "./actionTypes";
+import {
+  CHANGE_INDEX,
+  TOGGLE_AGREE,
+  CHANGE_TAB,
+  SWITCH_SHOW
+} from "./actionTypes";
 const changeIndex = index => {
   return {
     type: CHANGE_INDEX,
@@ -16,4 +21,9 @@ const changeTab = tab => {
     payload: tab
   };
 };
-export { changeIndex, toggleAgree, changeTab };
+const switchShow = () => {
+  return {
+    type: SWITCH_SHOW
+  };
+};
+export { changeIndex, toggleAgree, changeTab, switchShow };

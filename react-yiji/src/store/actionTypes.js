@@ -2,3 +2,4 @@
 export const CHANGE_INDEX = "CHANGE_INDEX";
 export const TOGGLE_AGREE = "TOGGLE_AGREE";
 export const CHANGE_TAB = "CHANGE_TAB";
+export const SWITCH_SHOW = "SWITCH_SHOW";
