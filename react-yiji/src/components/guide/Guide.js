@@ -5,7 +5,6 @@ import { changeIndex } from "../../store/actions";
 import "./guide.css";
 import TodayPush from "./TodayPush";
 class Guide extends Component {
-  componentDidMount() {}
   render() {
     // const { activeIndex, changeIndex } = this.props;
     const guideSwiper = {

@@ -5,6 +5,7 @@ import "./myswiper.css";
 class MySwiper extends Component {
   componentDidMount() {
     const {
+      autoplay,
       direction,
       loop,
       swiperId,
@@ -14,10 +15,10 @@ class MySwiper extends Component {
       allowSlidePrev
     } = this.props;
     new Swiper(`#${swiperId}`, {
-      direction, // 垂直切换选项
-      loop, // 循环模式选项
+      direction: direction === undefined ? "horizontal" : direction, // 垂直切换选项
+      loop: loop === undefined ? false : loop, // 循环模式选项
 
-      slidesPerView,
+      slidesPerView: slidesPerView === undefined ? 1 : slidesPerView,
       // 如果需要前进后退按钮
       navigation: navigation
         ? {
@@ -30,7 +31,8 @@ class MySwiper extends Component {
             el: `.${pagination.el}`
           }
         : {},
-      allowSlidePrev: allowSlidePrev === undefined ? true : allowSlidePrev
+      allowSlidePrev: allowSlidePrev === undefined ? true : allowSlidePrev,
+      autoplay: autoplay === undefined ? false : autoplay //可选选项，自动滑动
       // on: {
       //   slideChange: function() {
       //     changeIndex(this.activeIndex);

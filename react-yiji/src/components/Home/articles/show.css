@@ -1,0 +1,29 @@
+.show {
+  width: 7.5rem;
+  overflow: hidden;
+}
+.show-tabs {
+  width: 15rem;
+}
+.show-tab {
+  width: 7.5rem;
+}
+.show-tab .tab-title {
+  background-color: #c9c9c9;
+}
+.show-tab .tab-title span {
+  display: block;
+  width: 3.75rem;
+  line-height: 0.6041666666666667rem;
+  color: #000;
+  text-align: center;
+}
+.tab-title span.onshow {
+  color: #fff;
+  background: linear-gradient(to right, #cd8c88, #d32117);
+  border-top-right-radius: 0.3020833333333333rem;
+  border-bottom-right-radius: 0.3020833333333333rem;
+}
+.tab-title span.toshow {
+  color: #fff;
+}

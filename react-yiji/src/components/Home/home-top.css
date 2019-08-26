@@ -1,0 +1,18 @@
+.home-top {
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  height: 1.215277777777778rem;
+  background-color: #f0f0f2;
+}
+.home-top h1 img {
+  width: 2.5rem;
+}
+.home-top .scope {
+  right: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home-top .scope img {
+  width: 0.7rem;
+}

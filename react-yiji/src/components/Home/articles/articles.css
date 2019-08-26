@@ -1,0 +1,12 @@
+.banner {
+  width: 7.5rem;
+  height: 3.798611111111111rem;
+}
+.category {
+  width: 7.5rem;
+  height: 1.9375rem;
+  padding: 6px 0;
+}
+.category .swiper-slide {
+  margin-right: 3px;
+}

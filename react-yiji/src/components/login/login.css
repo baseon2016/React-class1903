@@ -5,8 +5,10 @@
   background-size: cover;
 }
 .login-inner {
-  width: 6rem;
+  padding: 0 0.75rem;
+  padding-bottom: 0.2rem;
   margin: 0 auto;
+  border-bottom: 1px solid #f7f1f5;
 }
 .login-form {
   padding-top: 4.5rem;
@@ -53,4 +55,17 @@
 }
 .agree-info p > span {
   color: #fff;
+}
+.share {
+  padding-top: 0.4rem;
+}
+.share > div {
+  width: 2.5rem;
+}
+.share div + div {
+  border-left: 1px solid #fff;
+  text-align: center;
+}
+.share img {
+  width: 1.416666rem;
 }

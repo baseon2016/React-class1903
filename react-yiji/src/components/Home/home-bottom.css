@@ -1,0 +1,15 @@
+.home-bottom {
+  width: 7.5rem;
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.home-bottom ul {
+  justify-content: space-between;
+  padding: 0 0.2rem;
+}
+.home-bottom ul li img {
+  display: block;
+  width: 1.5rem;
+}

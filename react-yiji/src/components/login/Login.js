@@ -44,7 +44,26 @@ class Login extends Component {
               登录或注册即同意艺集<span>用户服务协议</span>
             </p>
           </div>
-          <div />
+        </div>
+        <div className="share df">
+          <div>
+            <img
+              src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/weibo.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/weixin.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/qq.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     );
