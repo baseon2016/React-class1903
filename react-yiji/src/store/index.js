@@ -4,11 +4,15 @@ import guide from "./reducers/guide";
 import login from "./reducers/login";
 import home from "./reducers/home";
 import show from "./reducers/show";
+import recommend from "./reducers/recommend";
+import user from "./reducers/user";
 const rootReducer = combineReducers({
   guide,
   login,
   home,
-  show
+  show,
+  recommend,
+  user
 });
 const store = createStore(rootReducer, applyMiddleware(logger));
 export default store;

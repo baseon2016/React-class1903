@@ -1,10 +1,10 @@
 import React from "react";
-const showRe = onShow => {
+const dataRemake = onShow => {
   return (
-    <ul className="show-list">
+    <ul className="list">
       {onShow.map(ele => {
         return (
-          <li key={ele.id} className="show-item po-r">
+          <li key={ele.id} className="item po-r">
             <img src={ele.url} alt=""></img>
             <div className="item-func po-a df">
               <span className="iconfont iconshare"></span>
@@ -23,17 +23,21 @@ const showRe = onShow => {
                 </span>
               </div>
             </div>
-            <div className="item-day po-a">
-              {ele.deadline === -1 ? (
-                <span className="over">已结束</span>
-              ) : (
-                <span className="day-info">剩余{ele.deadline}天</span>
-              )}
-            </div>
+            {ele.deadline === undefined ? (
+              ""
+            ) : (
+              <div className="item-day po-a">
+                {ele.deadline === -1 ? (
+                  <span className="over">已结束</span>
+                ) : (
+                  <span className="day-info">剩余{ele.deadline}天</span>
+                )}
+              </div>
+            )}
           </li>
         );
       })}
     </ul>
   );
 };
-export { showRe };
+export { dataRemake };

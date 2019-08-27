@@ -1,0 +1,84 @@
+.tabs {
+  width: 15rem;
+  transition: all 1s;
+}
+.tabs.switch {
+  transform: translateX(-7.5rem);
+}
+.tab {
+  width: 7.5rem;
+}
+.tab .tab-title {
+  background-color: #c9c9c9;
+}
+.tab .tab-title span {
+  display: block;
+  width: 3.75rem;
+  line-height: 0.6041666666666667rem;
+  color: #000;
+  text-align: center;
+}
+.tab-title span.left {
+  color: #fff;
+  background: linear-gradient(to right, #cd8c88, #d32117);
+  border-top-right-radius: 0.3020833333333333rem;
+  border-bottom-right-radius: 0.3020833333333333rem;
+}
+.tab-title span.right {
+  color: #fff;
+  background: linear-gradient(to left, #cd8c88, #d32117);
+  border-top-left-radius: 0.3020833333333333rem;
+  border-bottom-left-radius: 0.3020833333333333rem;
+}
+.content {
+  padding-bottom: 1.5rem;
+}
+.list li {
+  margin-bottom: 0.14rem;
+}
+.list li > img {
+  display: block;
+  width: 7.5rem;
+}
+.item .item-func {
+  width: 7.5rem;
+  height: 0.6rem;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 0;
+  z-index: 1;
+}
+.item .item-func div {
+  margin-left: 0.4rem;
+  margin-right: 0.2rem;
+}
+.item .item-func span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-left: 3px;
+}
+.item .item-func .iconfont {
+  font-size: 14px;
+  margin-right: 1px;
+}
+.item .item-day {
+  right: 0;
+  top: 15px;
+  z-index: 1;
+}
+.item .item-day span {
+  display: block;
+  width: 1.4rem;
+  font-size: 10px;
+  line-height: 0.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  padding-left: 0.24rem;
+}
+.item .item-day span.over {
+  background-color: #242424;
+}
+.item .item-day span.day-info {
+  background-color: #c93b2f;
+}

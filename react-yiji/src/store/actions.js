@@ -1,8 +1,11 @@
 import {
   CHANGE_INDEX,
   TOGGLE_AGREE,
+  GET_TAB,
   CHANGE_TAB,
-  SWITCH_SHOW
+  SWITCH_SHOW,
+  SWITCH_RECMD,
+  SWITCH_USERACTIVE
 } from "./actionTypes";
 const changeIndex = index => {
   return {
@@ -13,6 +16,12 @@ const changeIndex = index => {
 const toggleAgree = () => {
   return {
     type: TOGGLE_AGREE
+  };
+};
+const getTab = tab => {
+  return {
+    type: GET_TAB,
+    payload: tab
   };
 };
 const changeTab = tab => {
@@ -26,4 +35,22 @@ const switchShow = () => {
     type: SWITCH_SHOW
   };
 };
-export { changeIndex, toggleAgree, changeTab, switchShow };
+const switchRecmd = () => {
+  return {
+    type: SWITCH_RECMD
+  };
+};
+const switchUserActive = () => {
+  return {
+    type: SWITCH_USERACTIVE
+  };
+};
+export {
+  changeIndex,
+  toggleAgree,
+  getTab,
+  changeTab,
+  switchShow,
+  switchRecmd,
+  switchUserActive
+};

@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import HomeTop from "../HomeTop";
+import RecmdContainer from "./RecmdContainer";
 class Recommend extends Component {
   state = {};
   render() {
-    return <div>推广</div>;
+    return (
+      <div>
+        <HomeTop></HomeTop>
+        <RecmdContainer></RecmdContainer>
+      </div>
+    );
   }
 }
 
