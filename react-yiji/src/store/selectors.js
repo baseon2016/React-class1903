@@ -40,4 +40,33 @@ const dataRemake = onShow => {
     </ul>
   );
 };
-export { dataRemake };
+const dataToTags = data => {
+  const dataLeft = [];
+  const dataRight = [];
+  data.forEach((ele, ind) => {
+    if (ind % 2) {
+      dataRight.push(ele);
+    } else {
+      dataLeft.push(ele);
+    }
+  });
+  return (
+    <div className="splits df">
+      <div className="split">
+        {dataLeft.map(ele => (
+          <div key={ele.id}>
+            <img src={ele.url} alt=""></img>
+          </div>
+        ))}
+      </div>
+      <div className="split">
+        {dataRight.map(ele => (
+          <div key={ele.id}>
+            <img src={ele.url} alt=""></img>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+export { dataRemake, dataToTags };

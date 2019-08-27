@@ -5,6 +5,8 @@ const initialState = {
     "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-headshot-1.png",
   headShot2:
     "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-headshot-2.png",
+  bgUrl:
+    "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-bg.png",
   follows: 11,
   posts: 9,
   visitors: 49,

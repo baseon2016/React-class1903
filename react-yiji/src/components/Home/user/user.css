@@ -1,4 +1,95 @@
+.user .user-top {
+  background-size: cover;
+  padding-top: 1.3rem;
+  padding-bottom: 0.75rem;
+}
+.user-top .headshot {
+  margin: 0 auto;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.user-top .headshot img {
+  display: block;
+  width: 100%;
+}
+.user-top h3 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.35rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: lighter;
+  font-size: 20px;
+}
+.user-top .interact {
+  width: 3rem;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.user-top .interact span {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  text-align: center;
+}
+.user-top .settings {
+  width: 0.3819444444444444rem;
+  height: 0.3819444444444444rem;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+.user-top .settings img {
+  display: block;
+  width: 100%;
+}
+.user .my-collection .my-title span.title {
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 0.9027777777777778rem;
+  padding-left: 5px;
+}
+.my-collection .my-title .collect-btn {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.my-collection .my-title .collect-btn span {
+  display: block;
+  width: 1.3rem;
+  font-size: 10px;
+  line-height: 0.45rem;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #dd4d45;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  padding-left: 0.24rem;
+}
+.my-collection .collection {
+  justify-content: space-around;
+}
+.my-collection .collection div > img {
+  display: block;
+  width: 100%;
+}
+.my-collection .collection div > p {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.1rem 0 0.2rem 10px;
+}
 .user-bottom {
   width: 7.5rem;
   overflow: hidden;
+  padding-bottom: 1.5rem;
+}
+.splits {
+  width: 7.5rem;
+  justify-content: space-between;
+}
+.split {
+  width: 3.7rem;
+  padding-top: 5px;
+}
+.split img {
+  width: 100%;
 }

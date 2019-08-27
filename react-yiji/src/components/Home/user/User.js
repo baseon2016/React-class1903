@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Tab from "../Tab";
 import "./user.css";
 class User extends Component {
   state = {};
   render() {
-    console.log(this.props);
     const {
       userName,
       headShot,
-      headShot2,
+      bgUrl,
       follows,
       posts,
       visitors,
@@ -21,12 +21,15 @@ class User extends Component {
     } = this.props;
     return (
       <div className="user">
-        <div className="user-top">
-          <div>
+        <div
+          className="user-top po-r"
+          style={{ backgroundImage: `url(${bgUrl})` }}
+        >
+          <div className="headshot">
             <img src={headShot} alt="" />
           </div>
           <h3>{userName}</h3>
-          <div className="interact">
+          <div className="interact df">
             <div>
               <span>关注</span>
               <span>{follows}</span>
@@ -40,17 +43,26 @@ class User extends Component {
               <span>{visitors}</span>
             </div>
           </div>
-          <div className="settings">setting</div>
+          <div className="settings">
+            <Link to="/settings">
+              <img
+                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-setting.png"
+                alt=""
+              ></img>
+            </Link>
+          </div>
         </div>
         <div className="my-collection">
-          <div className="my-title">
-            <span>艺象云集</span>
-            <span>ALL ></span>
+          <div className="my-title po-r">
+            <span className="title">艺象云集</span>
+            <div className="collect-btn po-a">
+              <span>ALL ></span>
+            </div>
           </div>
-          <div className="collection">
+          <div className="collection df">
             <div>
               <img
-                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-1.png"
+                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-2.png"
                 alt=""
               />
               <p>
@@ -59,7 +71,7 @@ class User extends Component {
             </div>
             <div>
               <img
-                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-2.png"
+                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-3.png"
                 alt=""
               />
               <p>
@@ -68,7 +80,7 @@ class User extends Component {
             </div>
             <div>
               <img
-                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-3.png"
+                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-1.png"
                 alt=""
               />
               <p>
