@@ -7,6 +7,8 @@ import show from "./reducers/show";
 import recommend from "./reducers/recommend";
 import user from "./reducers/user";
 import userinfo from "./reducers/userinfo";
+import articleComments from "./reducers/articleComments";
+import articleShare from "./reducers/articleShare";
 const rootReducer = combineReducers({
   guide,
   login,
@@ -14,7 +16,9 @@ const rootReducer = combineReducers({
   show,
   recommend,
   user,
-  userinfo
+  userinfo,
+  articleComments,
+  articleShare
 });
 const store = createStore(rootReducer, applyMiddleware(logger));
 export default store;

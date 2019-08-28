@@ -7,6 +7,7 @@ import UserSettings from "./Home/user/UserSettings";
 import UserInfo from "./Home/user/UserInfo";
 import UserCollection from "./Home/user/UserCollection";
 import ArticleDetailContainer from "./ArticleDetail/ArticleDetailContainer";
+import Tohere from "./ArticleDetail/Tohere";
 const Main = () => {
   return (
     <div>
@@ -21,6 +22,7 @@ const Main = () => {
           path="/article-detail/:id"
           component={ArticleDetailContainer}
         ></Route>
+        <Route path="/tohere" component={Tohere}></Route>
       </Switch>
     </div>
   );

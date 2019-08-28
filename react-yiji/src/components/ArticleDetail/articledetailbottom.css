@@ -1,0 +1,18 @@
+.detail-bottom {
+  width: 7.5rem;
+  line-height: 1rem;
+  background-color: #000;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.8);
+}
+.detail-bottom ul {
+  justify-content: space-around;
+  align-items: center;
+}
+.detail-bottom a {
+  color: rgba(255, 255, 255, 0.8);
+}

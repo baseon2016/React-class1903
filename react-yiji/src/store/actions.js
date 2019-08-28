@@ -6,7 +6,9 @@ import {
   SWITCH_SHOW,
   SWITCH_RECMD,
   SWITCH_USERACTIVE,
-  SWITCH_USERINFO
+  SWITCH_USERINFO,
+  SWITCH_ARTICLESHARE,
+  COMMENT_NUM
 } from "./actionTypes";
 const changeIndex = index => {
   return {
@@ -52,6 +54,18 @@ const switchUserInfo = payload => {
     payload
   };
 };
+const switchArticleShare = payload => {
+  return {
+    type: SWITCH_ARTICLESHARE,
+    payload
+  };
+};
+const commentNum = payload => {
+  return {
+    type: COMMENT_NUM,
+    payload
+  };
+};
 export {
   changeIndex,
   toggleAgree,
@@ -60,5 +74,7 @@ export {
   switchShow,
   switchRecmd,
   switchUserActive,
-  switchUserInfo
+  switchUserInfo,
+  switchArticleShare,
+  commentNum
 };
