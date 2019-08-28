@@ -6,3 +6,4 @@ export const CHANGE_TAB = "CHANGE_TAB";
 export const SWITCH_SHOW = "SWITCH_SHOW";
 export const SWITCH_RECMD = "SWITCH_RECMD";
 export const SWITCH_USERACTIVE = "SWITCH_USERACTIVE";
+export const SWITCH_USERINFO = "SWITCH_USERINFO";

@@ -26,7 +26,9 @@ class User extends Component {
           style={{ backgroundImage: `url(${bgUrl})` }}
         >
           <div className="headshot">
-            <img src={headShot} alt="" />
+            <Link to="/userinfo">
+              <img src={headShot} alt="" />
+            </Link>
           </div>
           <h3>{userName}</h3>
           <div className="interact df">
@@ -61,19 +63,23 @@ class User extends Component {
           </div>
           <div className="collection df">
             <div>
-              <img
-                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-2.png"
-                alt=""
-              />
+              <Link to="/usercollection/exhibition">
+                <img
+                  src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-2.png"
+                  alt=""
+                />
+              </Link>
               <p>
                 订阅/<span>{collectExhibition.length}</span>
               </p>
             </div>
             <div>
-              <img
-                src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-3.png"
-                alt=""
-              />
+              <Link to="/usercollection/articles">
+                <img
+                  src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-collection-3.png"
+                  alt=""
+                />
+              </Link>
               <p>
                 订阅/<span>{collectArticles.length}</span>
               </p>

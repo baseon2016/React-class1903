@@ -5,7 +5,8 @@ import {
   CHANGE_TAB,
   SWITCH_SHOW,
   SWITCH_RECMD,
-  SWITCH_USERACTIVE
+  SWITCH_USERACTIVE,
+  SWITCH_USERINFO
 } from "./actionTypes";
 const changeIndex = index => {
   return {
@@ -45,6 +46,12 @@ const switchUserActive = () => {
     type: SWITCH_USERACTIVE
   };
 };
+const switchUserInfo = payload => {
+  return {
+    type: SWITCH_USERINFO,
+    payload
+  };
+};
 export {
   changeIndex,
   toggleAgree,
@@ -52,5 +59,6 @@ export {
   changeTab,
   switchShow,
   switchRecmd,
-  switchUserActive
+  switchUserActive,
+  switchUserInfo
 };

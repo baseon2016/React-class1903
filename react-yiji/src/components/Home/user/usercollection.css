@@ -1,0 +1,21 @@
+.user-collection {
+  background-color: #f0f0f2;
+}
+.collection-title {
+  border-top: 4px solid #dae5e7;
+  padding: 0 0.45rem;
+  justify-content: space-between;
+  line-height: 0.7291666666666667rem;
+  letter-spacing: 1px;
+}
+.collection-title h3 {
+  font-size: 12px;
+  font-weight: lighter;
+}
+.collection-title h3 > span {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.collection-title span {
+  font-size: 12px;
+}

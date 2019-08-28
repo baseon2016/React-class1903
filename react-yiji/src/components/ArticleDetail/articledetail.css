@@ -1,0 +1,30 @@
+.article-detail .title-img img,
+.article-detail .author-info img,
+.article-detail .works-info img {
+  width: 7.5rem;
+  display: block;
+}
+.article-detail span.article-tag {
+  display: block;
+  width: 1.5rem;
+  font-size: 12px;
+  line-height: 0.45rem;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #dd4d45;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  padding-right: 0.24rem;
+  text-align: right;
+}
+.article-detail .show-info p,
+.article-detail .author-info p {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+}
+.works-info ul li + li {
+  margin-top: 0.2rem;
+}
+.article-detail .comments ul li {
+  background-color: #dcdcd2;
+}

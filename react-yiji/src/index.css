@@ -44,6 +44,9 @@ h6 {
 .po-a {
   position: absolute;
 }
+.po-f {
+  position: fixed;
+}
 .click-bar {
   cursor: pointer;
   user-select: none;

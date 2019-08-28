@@ -68,7 +68,7 @@
 .my-collection .collection {
   justify-content: space-around;
 }
-.my-collection .collection div > img {
+.my-collection .collection div img {
   display: block;
   width: 100%;
 }

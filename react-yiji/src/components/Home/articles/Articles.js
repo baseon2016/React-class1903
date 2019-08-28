@@ -24,6 +24,7 @@ class Articles extends Component {
             "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/banner-3.jpg"
         }
       ],
+      autoplay: true,
       direction: "horizontal", // 垂直切换选项
       loop: true, // 循环模式选项
       swiperId: "swiper-banner",

@@ -6,13 +6,15 @@ import home from "./reducers/home";
 import show from "./reducers/show";
 import recommend from "./reducers/recommend";
 import user from "./reducers/user";
+import userinfo from "./reducers/userinfo";
 const rootReducer = combineReducers({
   guide,
   login,
   home,
   show,
   recommend,
-  user
+  user,
+  userinfo
 });
 const store = createStore(rootReducer, applyMiddleware(logger));
 export default store;

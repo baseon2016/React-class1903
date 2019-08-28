@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./home-top.css";
 class HomeTop extends Component {
   state = {};
@@ -17,9 +18,21 @@ class HomeTop extends Component {
             alt=""
           />
         </div>
+        {this.props.hasBack === undefined ? (
+          ""
+        ) : this.props.hasBack ? (
+          <div className="back po-a" onClick={this.props.history.goBack}>
+            <img
+              src="https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/user-info-pre.png"
+              alt=""
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
 }
 
-export default HomeTop;
+export default withRouter(HomeTop);

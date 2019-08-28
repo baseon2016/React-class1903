@@ -3,73 +3,81 @@ const initialState = {
   recmdActive: false,
   recmdL: [
     {
-      id: "1",
+      id: "b1",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/toshow-2.png",
       likes: 821,
       views: 1394,
       comments: 56,
-      deadline: 80
+      deadline: 80,
+      type: "articles"
     },
     {
-      id: "2",
+      id: "b2",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/toshow-3.png",
       likes: 151,
       views: 1126,
       comments: 123,
-      deadline: 90
+      deadline: 90,
+      type: "articles"
     },
     {
-      id: "3",
+      id: "b3",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/toshow-4.png",
       likes: 1119,
       views: 2360,
       comments: 401,
-      deadline: 119
+      deadline: 119,
+      type: "articles"
     }
   ],
   recmdR: [
     {
-      id: "1",
+      id: "bb1",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/recommend-1.png",
       likes: 159,
       views: 394,
-      comments: 98
+      comments: 98,
+      type: "articles"
     },
     {
-      id: "2",
+      id: "bb2",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/recommend-2.png",
       likes: 169,
       views: 594,
-      comments: 1256
+      comments: 1256,
+      type: "articles"
     },
     {
-      id: "3",
+      id: "bb3",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/recommend-3.png",
       likes: 89,
       views: 224,
-      comments: 32
+      comments: 32,
+      type: "articles"
     },
     {
-      id: "4",
+      id: "bb4",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/recommend-4.png",
       likes: 169,
       views: 494,
-      comments: 54
+      comments: 54,
+      type: "articles"
     },
     {
-      id: "5",
+      id: "bb5",
       url:
         "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/recommend-5.png",
       likes: 219,
       views: 594,
-      comments: 26
+      comments: 26,
+      type: "articles"
     }
   ]
 };
