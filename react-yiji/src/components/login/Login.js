@@ -1,28 +1,66 @@
 import React, { Component } from "react";
 import "./login.css";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { toggleAgree } from "../../store/actions";
 class Login extends Component {
+  state = {
+    userName: "Devin",
+    userPassword: "5201314"
+  };
+  login = () => {
+    if (
+      this.state.userName === "Devin" &&
+      this.state.userPassword === "5201314"
+    ) {
+      sessionStorage.setItem('token',this.state.userName+this.state.userPassword)
+      sessionStorage.setItem('user',this.state.userName)
+      this.props.history.push("/home");
+    }else{
+      alert('账号密码不正确')
+    }
+  };
+  nameInput = e => {
+    this.setState({
+      ...this.state,
+      userName: e.target.value
+    });
+  };
+  passwordInput = e => {
+    this.setState({
+      ...this.state,
+      userPassword: e.target.value
+    });
+  };
   render() {
     const { agreement } = this.props;
+    const { userName, userPassword } = this.state;
     return (
       <div className="login">
         <div className="login-inner">
           <div className="login-form">
             <div>
-              <input type="text" placeholder="点击输入手机号/Email登录" />
+              <input
+                type="text"
+                placeholder="点击输入手机号/Email登录"
+                onChange={e => this.nameInput(e)}
+                value={userName}
+              />
             </div>
             <div>
-              <input type="password" placeholder="输入密码" />
+              <input
+                type="password"
+                placeholder="输入密码"
+                onChange={e => this.passwordInput(e)}
+                value={userPassword}
+              />
             </div>
             <div className="login-btn df">
-              <Link to="/home" className="click-bar">
+              <span to="/home" className="click-bar" onClick={this.login}>
                 登录
-              </Link>
-              <Link to="/home" className="click-bar">
+              </span>
+              <span to="/home" className="click-bar">
                 注册
-              </Link>
+              </span>
             </div>
           </div>
           <div

@@ -39,19 +39,12 @@ class Guide extends Component {
             "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/lead5.jpg",
           component: <TodayPush />
         }
-        // {
-        //   id: "6",
-        //   url:
-        //     "https://dev.tencent.com/u/baseon2016/p/stocked-stuff/git/raw/master/ps-pics/lead6.jpg",
-        //   component: null
-        // }
       ],
       direction: "horizontal", // 垂直切换选项
       loop: false, // 循环模式选项
       swiperId: "swiper-guide",
       slidesPerView: 1,
       allowSlidePrev: false
-      // changeIndex
     };
 
     return (

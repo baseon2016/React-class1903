@@ -1,0 +1,17 @@
+.fade-enter {
+  margin-left: -100vw;
+}
+.fade-enter-active {
+  margin-left: 0;
+  transition: margin-left 1200ms;
+}
+.fade-exit {
+  margin-left: 0;
+}
+.fade-exit-active {
+  margin-left: 100vw;
+  transition: margin-left 1200ms;
+}
+.fade-exit-done {
+  display: none;
+}

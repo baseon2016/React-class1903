@@ -276,9 +276,14 @@ const rootReducer = (state = initialState, action) => {
   - 将 build 文件夹上传到服务器即可(免费用 git,或者公司服务器)
 
 插件<!-- gh-pages -d -build -->使用方法,简化上传步骤:
-1. 项目内安装插件 `npm i gh-pages -D`
-2. 在package.json文件内 script 属性 添加一项 `"deploy":"gh-pages -d build"`
-3. 直接在master执行 `npm run deploy`,会直接将master分支下的build文件夹内所有内容直接上传到 gh-pages分支
+
+1. 初始化本地仓库 `git init`
+2. 项目内安装插件 `npm i gh-pages -D`
+3. 在 package.json 文件内 script 属性 添加一项 `"deploy":"gh-pages -d build"`
+   homepage 属性 属性值是自己服务器地址 例如:`https://baseon2016.github.io/react-bushu`
+4. git 三步上传,本地仓库与远端链接
+5. `npm run build`打包生成 build 文件夹
+6. 直接在 master 执行 `npm run deploy`,会直接将 master 分支下的 build 文件夹内所有内容直接上传到 gh-pages 分支
 
 ######react 项目启动修改 port
 
