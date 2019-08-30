@@ -1,0 +1,21 @@
+.mainfade-enter {
+  margin-left: 100vw;
+  position: absolute;
+  z-index: 1;
+}
+.mainfade-enter-active {
+  margin-left: 0;
+  transition: margin-left 1000ms;
+}
+
+.mainfade-exit {
+  margin-left: 0;
+  position: absolute;
+}
+.mainfade-exit-active {
+  margin-left: 0;
+  transition: margin-left 1000ms;
+}
+/* .mainfade-exit-done {
+  display: none;
+} */
